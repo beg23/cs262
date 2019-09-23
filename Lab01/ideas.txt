@@ -1,0 +1,7 @@
+Managable Project: An app which categorizes Calvin students based on interests that they share.
+These could be predefined categories selected by the app or could have some made by students themselves.
+Then the app could find other students which hold the most shared interests with you.
+
+Super Cool Project: An app which checks the logic of your Mathematical proofs. This would utilize photo to text conversion
+to turn your written proof into a digital format. This way you could show the grader what for when they claim that
+your perfectly reasonable proof isn't correct, or better yet, it could make the grader totally obsolete.

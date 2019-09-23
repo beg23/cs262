@@ -1,0 +1,27 @@
+1. Demographics:
+  a. Junior
+  b. BCS (and Math)
+  c. A, A
+2. Technical:
+  a.
+    i. No
+    ii. No
+    iii. No
+    iv. Yes, at CCEL (hymnary.org) although the majority of my work was on Python script, but I was exposed to it in review and
+        in my work on life.ccel.org.
+  b.
+    i. No
+    ii. Yes, for logging project hours at CCEL.
+    iii. GitLab, yes at CCEL contributing to the Python-Ly repo (inactive, so my changes aren't merged anywhere except on Hymnary
+         stuff), testing repos with a pipeline, and providing code review.
+  c. Yes, a phone and tablet (the tablet is older and slow, and I don't know its Android version). The phone runs 8.1.0.
+  d. I think some sort of social media app for Calvin would be enjoyable (like the suggested textbook buying or carpooling apps).
+3. Personality:
+  a. O-58%
+     C-77%
+     E-35%
+     A-71%
+     N-65%
+  b. I don't have all too many specific preferences. I would enjoy working with Charlie Kornoelje and/or Henri Prudhomme. I would prefer not to work with
+     Nikita Sietsema for personal reasons.
+4. Nope
