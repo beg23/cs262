@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity
     private TextView mTitleText;
     private TextView mAuthorText;
 
+    /**
+     * Create the main activity, find its needed Views, and create a Loader.
+     *
+     * @param savedInstanceState The Bundle of data to initialize.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Search for the given book title using the Google Books api.
+     *
+     * @param view The calling View (the search button)
+     */
     public void searchBooks(View view) {
         // Get the search string from the input field.
         String queryString = mBookInput.getText().toString();
@@ -80,6 +90,13 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Create BookLoader for the given search title.
+     *
+     * @param id The id of the Loader.
+     * @param args Should contain the title for the book to search for.
+     * @return The BookLoader.
+     */
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
@@ -92,6 +109,12 @@ public class MainActivity extends AppCompatActivity
         return new BookLoader(this, queryString);
     }
 
+    /**
+     * When the load is finished, display the resulting book title and authors.
+     *
+     * @param loader The Loader which finished.
+     * @param data The JSON data returned by the Loader.
+     */
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         try {

@@ -22,6 +22,12 @@ public class NetworkUtils {
     // Parameter to filter by print type.
     private static final String PRINT_TYPE = "printType";
 
+    /**
+     * Returns the JSON as a String which results from querying for the queryString.
+     *
+     * @param queryString The String to query for (likely part of a book title).
+     * @return The JSON as a String which results from the GET request.
+     */
     static String getBookInfo(String queryString) {
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;

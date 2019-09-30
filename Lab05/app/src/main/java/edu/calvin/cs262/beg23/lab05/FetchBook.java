@@ -13,17 +13,33 @@ public class FetchBook  extends AsyncTask<String, Void, String> {
     private WeakReference<TextView> mTitleText;
     private WeakReference<TextView> mAuthorText;
 
+    /**
+     * Create a FetchBook object with associated TextViews to display in.
+     *
+     * @param titleText A TextView to display the title in.
+     * @param authorText A TextView to display the authors in.
+     */
     FetchBook(TextView titleText, TextView authorText) {
         this.mTitleText = new WeakReference<>(titleText);
         this.mAuthorText = new WeakReference<>(authorText);
     }
 
+    /**
+     * Returns the JSON from querying for the given query String.
+     *
+     * @param strings An array of query Strings (only uses the first).
+     * @return The JSON which is returned by querying for the query String.
+     */
     @Override
     protected String doInBackground(String... strings) {
-
         return NetworkUtils.getBookInfo(strings[0]);
     }
 
+    /**
+     * Extract the title and authors info from the JSON.
+     *
+     * @param s The String response from querying which will be made into a JSON.
+     */
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
