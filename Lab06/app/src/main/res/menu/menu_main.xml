@@ -25,4 +25,9 @@
         android:title="@string/action_favorites"
         android:icon="@drawable/ic_favorite"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="50"
+        android:title="@string/settings"
+        app:showAsAction="never" />
 </menu>
