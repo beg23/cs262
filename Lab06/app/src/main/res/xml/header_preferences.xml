@@ -32,6 +32,6 @@
         app:fragment="edu.calvin.cs262.beg23.lab06.SettingsActivity$AccountFragment"
         app:icon="@drawable/ic_account"
         app:key="pref_account"
-        app:title="@string/pref_title_account" />
+        app:title="@string/pref_header_account" />
 
 </PreferenceScreen>

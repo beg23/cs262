@@ -28,7 +28,7 @@
         android:key="sync_frequency"
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
-        android:title="@string/pref_header_account"
+        android:title="@string/pref_title_account"
         app:useSimpleSummaryProvider="true" />
 
     <!-- This preference simply launches an intent when selected. Use this UI
