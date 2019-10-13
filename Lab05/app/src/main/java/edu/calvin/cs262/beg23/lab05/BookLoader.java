@@ -22,7 +22,7 @@ public class BookLoader extends AsyncTaskLoader<String> {
     }
 
     /**
-     * Begin loading the to find books matching the query String.
+     * Begin loading to find books matching the query String.
      */
     @Override
     protected void onStartLoading() {
