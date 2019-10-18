@@ -11,6 +11,8 @@ DROP TABLE IF EXISTS Property;
 DROP TABLE IF EXISTS PlayerGame;
 DROP TABLE IF EXISTS Game;
 DROP TABLE IF EXISTS Player;
+DROP TYPE IF EXISTS propertyName;
+DROP TYPE IF EXISTS square;
 
 -- Create new types as needed. TODO: Unnecessary?
 CREATE TYPE square AS ENUM (
@@ -26,7 +28,7 @@ CREATE TYPE square AS ENUM (
 	'chance3', 'parkPlace', 'luxuryTax', 'boardwalk'
 	);
 
-CREATE TYPE property AS ENUM (
+CREATE TYPE propertyName AS ENUM (
 	'mediterraneanAvenue', 'balticAvenue',
 	'readingRailroad', 'orientalAvenue',
 	'vermontAvenue', 'connecticutAvenue', 'stCharlesPlace',
@@ -42,7 +44,8 @@ CREATE TYPE property AS ENUM (
 -- Create the schema.
 CREATE TABLE Game (
 	ID integer PRIMARY KEY, 
-	time timestamp
+	time timestamp,
+    finished boolean
 	);
 
 CREATE TABLE Player (
@@ -54,7 +57,7 @@ CREATE TABLE Player (
 CREATE TABLE Property (
 	gameID integer REFERENCES Game(ID),
 	playerID integer REFERENCES Player(ID),
-	propertyName property,
+	propertyName propertyName,
 	houses integer,
 	hotel boolean
 	);
@@ -72,9 +75,9 @@ GRANT SELECT ON Player TO PUBLIC;
 GRANT SELECT ON PlayerGame TO PUBLIC;
 
 -- Add sample records.
-INSERT INTO Game VALUES (1, '2006-06-27 08:00:00');
-INSERT INTO Game VALUES (2, '2006-06-28 13:20:00');
-INSERT INTO Game VALUES (3, '2006-06-29 18:41:00');
+INSERT INTO Game VALUES (1, '2006-06-27 08:00:00', FALSE);
+INSERT INTO Game VALUES (2, '2006-06-28 13:20:00', FALSE);
+INSERT INTO Game VALUES (3, '2006-06-29 18:41:00', FALSE);
 
 INSERT INTO Player(ID, emailAddress) VALUES (1, 'me@calvin.edu');
 INSERT INTO Player VALUES (2, 'king@gmail.edu', 'The King');
