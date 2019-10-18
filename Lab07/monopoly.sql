@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS Player;
 DROP TYPE IF EXISTS propertyName;
 DROP TYPE IF EXISTS square;
 
--- Create new types as needed. TODO: Unnecessary?
+-- Create necessary types
 CREATE TYPE square AS ENUM (
 	'go', 'mediterraneanAvenue', 'communityChest1', 'balticAvenue',
 	'incomeTax', 'readingRailroad', 'orientalAvenue', 'chance1',
@@ -55,6 +55,7 @@ CREATE TABLE Player (
 	);
 
 CREATE TABLE Property (
+    ID integer PRIMARY KEY,
 	gameID integer REFERENCES Game(ID),
 	playerID integer REFERENCES Player(ID),
 	propertyName propertyName,
@@ -63,6 +64,7 @@ CREATE TABLE Property (
 	);
 
 CREATE TABLE PlayerGame (
+    ID integer PRIMARY KEY,
 	gameID integer REFERENCES Game(ID), 
 	playerID integer REFERENCES Player(ID),
 	cash integer,
@@ -73,6 +75,7 @@ CREATE TABLE PlayerGame (
 GRANT SELECT ON Game TO PUBLIC;
 GRANT SELECT ON Player TO PUBLIC;
 GRANT SELECT ON PlayerGame TO PUBLIC;
+GRANT SELECT ON Property TO PUBLIC;
 
 -- Add sample records.
 INSERT INTO Game VALUES (1, '2006-06-27 08:00:00', FALSE);
@@ -80,17 +83,17 @@ INSERT INTO Game VALUES (2, '2006-06-28 13:20:00', FALSE);
 INSERT INTO Game VALUES (3, '2006-06-29 18:41:00', FALSE);
 
 INSERT INTO Player(ID, emailAddress) VALUES (1, 'me@calvin.edu');
-INSERT INTO Player VALUES (2, 'king@gmail.edu', 'The King');
-INSERT INTO Player VALUES (3, 'dog@gmail.edu', 'Dogbreath');
+INSERT INTO Player VALUES (2, 'meso@gmail.edu', 'Mesonak');
+INSERT INTO Player VALUES (3, 'var@gmail.edu', 'Varderan');
 
-INSERT INTO Property VALUES (3, 3, 'boardwalk', 4, FALSE);
-INSERT INTO Property VALUES (3, 3, 'parkPlace', 0, TRUE);
+INSERT INTO Property VALUES (1, 3, 3, 'boardwalk', 4, FALSE);
+INSERT INTO Property VALUES (2, 3, 3, 'parkPlace', 0, TRUE);
 
-INSERT INTO PlayerGame VALUES (1, 1, 0.00, 'go');
-INSERT INTO PlayerGame VALUES (1, 2, 0.00, 'boardwalk');
-INSERT INTO PlayerGame VALUES (1, 3, 2350.00, 'stJamesPlace');
-INSERT INTO PlayerGame VALUES (2, 1, 1000.00, 'luxuryTax');
-INSERT INTO PlayerGame VALUES (2, 2, 0.00, 'atlanticAvenue');
-INSERT INTO PlayerGame VALUES (2, 3, 500.00, 'chance2');
-INSERT INTO PlayerGame VALUES (3, 2, 0.00, 'jail');
-INSERT INTO PlayerGame VALUES (3, 3, 5500.00, 'communityChest3');
+INSERT INTO PlayerGame VALUES (1, 1, 1, 0.00, 'go');
+INSERT INTO PlayerGame VALUES (2, 1, 2, 0.00, 'boardwalk');
+INSERT INTO PlayerGame VALUES (3, 1, 3, 2350.00, 'stJamesPlace');
+INSERT INTO PlayerGame VALUES (4, 2, 1, 1000.00, 'luxuryTax');
+INSERT INTO PlayerGame VALUES (5, 2, 2, 0.00, 'atlanticAvenue');
+INSERT INTO PlayerGame VALUES (6, 2, 3, 500.00, 'chance2');
+INSERT INTO PlayerGame VALUES (7, 3, 2, 0.00, 'jail');
+INSERT INTO PlayerGame VALUES (8, 3, 3, 5500.00, 'communityChest3');
