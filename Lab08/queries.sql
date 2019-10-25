@@ -6,7 +6,6 @@
 --
 -- Note that because of how I have changed the sample data in monopoly.sql,
 --  my results will be different than if you query Vander Linden's sample data.
---  Also, I had to replace the finished bool in Game to winnerID which can be NULL if game is unfinished.
 --
 
 -- 8.1.a
@@ -16,6 +15,8 @@
 -- 8.1.b
 
 -- SELECT * FROM Game WHERE time >= '2019-10-19' AND time < '2019-10-26';
+-- or
+-- SELECT * FROM Game WHERE time >= (NOW() - INTERVAL '7 days');
 
 -- 8.1.c
 
@@ -35,7 +36,7 @@
 
 -- 8.2.b
 
--- SELECT Player.name FROM Player, Game WHERE Game.time = '2006-06-28 13:20:00' AND Player.ID = Game.winnerID;
+-- SELECT Player.name FROM Player, PlayerGame, Game WHERE Game.time = '2006-06-28 13:20:00' AND PlayerGame.gameID = Game.ID AND PlayerGame.playerID = Player.ID ORDER BY PlayerGame.cash DESC LIMIT 1;
 
 -- 8.2.c
 

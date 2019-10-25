@@ -51,7 +51,7 @@ CREATE TABLE Player (
 CREATE TABLE Game (
 	ID integer PRIMARY KEY, 
 	time timestamp,
-    winnerID integer REFERENCES Player(ID)
+    finished boolean
 	);
 
 CREATE TABLE Property (
@@ -82,9 +82,9 @@ INSERT INTO Player(ID, emailAddress) VALUES (1, 'me@calvin.edu');
 INSERT INTO Player VALUES (2, 'meso@gmail.edu', 'The King');
 INSERT INTO Player VALUES (3, 'var@gmail.edu', 'Varderan');
 
-INSERT INTO Game VALUES (1, '2006-06-28 13:20:00', 3);
-INSERT INTO Game(ID, time) VALUES (2, '2019-10-19 13:20:00');
-INSERT INTO Game(ID, time) VALUES (3, '2019-10-18 18:41:00');
+INSERT INTO Game VALUES (1, '2006-06-28 13:20:00', TRUE);
+INSERT INTO Game VALUES (2, '2019-10-19 13:20:00', FALSE);
+INSERT INTO Game VALUES (3, '2019-10-18 18:41:00', FALSE);
 
 INSERT INTO Property VALUES (1, 3, 3, 'boardwalk', 4, FALSE);
 INSERT INTO Property VALUES (2, 3, 3, 'parkPlace', 0, TRUE);
