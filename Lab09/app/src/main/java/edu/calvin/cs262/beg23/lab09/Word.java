@@ -2,7 +2,6 @@ package edu.calvin.cs262.beg23.lab09;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
-import androidx.room.Dao;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 

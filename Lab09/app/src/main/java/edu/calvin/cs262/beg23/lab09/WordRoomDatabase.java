@@ -9,9 +9,6 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import edu.calvin.cs262.beg23.lab09.Word;
-import edu.calvin.cs262.beg23.lab09.WordDao;
-
 /**
  * Class to store the Word database
  */

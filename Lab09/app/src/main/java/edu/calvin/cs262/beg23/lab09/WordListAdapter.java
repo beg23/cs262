@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import edu.calvin.cs262.beg23.lab09.R;
-import edu.calvin.cs262.beg23.lab09.Word;
 
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 

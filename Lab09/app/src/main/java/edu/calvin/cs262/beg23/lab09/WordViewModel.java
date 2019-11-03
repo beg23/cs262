@@ -7,8 +7,6 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import edu.calvin.cs262.beg23.lab09.Word;
-
 /**
  * WordViewModel class to hold/process Word data for display by the UI
  */

@@ -7,9 +7,6 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import edu.calvin.cs262.beg23.lab09.Word;
-import edu.calvin.cs262.beg23.lab09.WordDao;
-
 /**
  * Repository to access the database through DAO
  */
