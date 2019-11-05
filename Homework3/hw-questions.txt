@@ -1,0 +1,10 @@
+2. a.
+
+This homework is not RESTful because it does not use HTTP(S) commands, it does not pass or recieve JSON or XML, and the objects are not URLs.
+Homework2 is not completely RESTful either although it is closer. It does use HTTP(S) with the GET command, it uses URLs for its request objects, and it is stateless because the receiver does not remember the state of the client between requests, but it does not recieve JSON or XML, it just recieves a full HTML page.
+
+2. b.
+
+In general, GET, PUT, DELETE in HTTP(s) are idempotent because performing them once is the same as performing them multiple times. In SQL, SELECT, DELETE, and UPDATE are idempotent.
+GET requests and SELECT statements are nullipotent as well because performing them X times is the same as performing them 0 times (they have no effect on the server/database).
+PUT requests and INSERT statements are neither because calling them over and over would continue to insert duplicate records (with different primary keys perhaps).
