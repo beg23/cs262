@@ -1,12 +1,8 @@
 package edu.calvin.cs262.beg23.homework3;
 
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
-import androidx.room.PrimaryKey;
-
-import java.sql.Date;
 
 /**
  * PlayerGame table from database (joins Player and Game Tables)

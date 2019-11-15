@@ -1,22 +1,15 @@
 package edu.calvin.cs262.beg23.homework2;
 
 import android.content.Context;
-import android.icu.util.Output;
-import android.net.Uri;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.SocketTimeoutException;
 import java.net.URL;
 
 public class PageLoader extends AsyncTaskLoader<String> {
@@ -26,7 +19,7 @@ public class PageLoader extends AsyncTaskLoader<String> {
      * The constructor sets the url to load.
      *
      * @param context The current Context.
-     * @param url The String of the url to load.
+     * @param url     The String of the url to load.
      */
     PageLoader(Context context, String url) {
         super(context);
@@ -56,7 +49,7 @@ public class PageLoader extends AsyncTaskLoader<String> {
         String pageContent;
 
         try {
-            // Connect to given url (timout after 1 minute)
+            // Connect to given url (timeout after 1 minute)
             URL requestURL = new URL(mUrl);
             urlConnection = (HttpURLConnection) requestURL.openConnection();
             urlConnection.setRequestMethod("GET");

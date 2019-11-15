@@ -10,7 +10,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -18,11 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
     private CharSequence mUrlType = "https://";
@@ -66,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
         });
 
-        mUrlText = (EditText) findViewById(R.id.enter_url);
-        mPageText = (TextView) findViewById(R.id.page_content);
+        mUrlText = findViewById(R.id.enter_url);
+        mPageText = findViewById(R.id.page_content);
 
         if(getSupportLoaderManager().getLoader(0)!=null){
             getSupportLoaderManager().initLoader(0,null,this);

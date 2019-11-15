@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,9 +14,6 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.DatabaseConfiguration;
-import androidx.room.InvalidationTracker;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 import android.util.Log;
 import android.view.View;
@@ -29,8 +25,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private PlayerViewModel mPlayerViewModel;
-    private MonopolyRoomDatabase mMonopolyRoomDatabase;
-    public static final int NEW_PLAYER_ACTIVITY_REQUEST_CODE = 1;
+    private static final int NEW_PLAYER_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         final PlayerListAdapter adapter = new PlayerListAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -70,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 new ItemTouchHelper.SimpleCallback(0,
                         ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
                     @Override
-                    public boolean onMove(RecyclerView recyclerView,
-                                          RecyclerView.ViewHolder viewHolder,
-                                          RecyclerView.ViewHolder target) {
+                    public boolean onMove(@NonNull RecyclerView recyclerView,
+                                          @NonNull RecyclerView.ViewHolder viewHolder,
+                                          @NonNull RecyclerView.ViewHolder target) {
                         return false;
                     }
 
                     @Override
-                    public void onSwiped(RecyclerView.ViewHolder viewHolder,
+                    public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder,
                                          int direction) {
                         int position = viewHolder.getAdapterPosition();
                         Player myPlayer = adapter.getPlayerAtPosition(position);
@@ -91,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         helper.attachToRecyclerView(recyclerView);
 
-        mMonopolyRoomDatabase = MonopolyRoomDatabase.getDatabase(getApplication());
+        MonopolyRoomDatabase mMonopolyRoomDatabase = MonopolyRoomDatabase.getDatabase(getApplication());
 
         // Log Players
         mMonopolyRoomDatabase.playerDao().getAllPlayers().observe(this, new Observer<List<Player>>() {

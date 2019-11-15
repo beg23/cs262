@@ -1,11 +1,8 @@
 package edu.calvin.cs262.beg23.homework3;
 
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-import java.sql.Date;
 
 /**
  * Game table from database
@@ -14,7 +11,7 @@ import java.sql.Date;
 public class Game {
 
     // Columns in Game Table
-    // Help for autogen from https://stackoverflow.com/questions/44109700/how-to-make-primary-key-as-autoincrement-for-room-persistence-lib
+    // Help for auto generation from https://stackoverflow.com/questions/44109700/how-to-make-primary-key-as-autoincrement-for-room-persistence-lib
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int mId;

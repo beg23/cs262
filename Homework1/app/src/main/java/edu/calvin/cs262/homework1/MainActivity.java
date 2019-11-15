@@ -1,15 +1,13 @@
 package edu.calvin.cs262.homework1;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
@@ -35,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      * Stores the operator type (+,-,*,÷) when selected on the Spinner.
      *
      * @param parent The AdapterView which stores the array of operations.
-     * @param view The View which was clicked.
-     * @param pos The int index of the item which the Spinner currently has selected.
-     * @param id The long row id of the selected item.
+     * @param view   The View which was clicked.
+     * @param pos    The int index of the item which the Spinner currently has selected.
+     * @param id     The long row id of the selected item.
      */
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         operator = (CharSequence) parent.getItemAtPosition(pos);
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      * Will display nothing if division by zero or either input is not provided.
      * </p>
      *
-     * @param view The Calculate button.
+     * @param view The View which called (calculate button)
      */
     public void calculateAnswer(View view) {
 

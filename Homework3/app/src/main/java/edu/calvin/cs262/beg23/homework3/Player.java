@@ -12,7 +12,7 @@ import androidx.room.PrimaryKey;
 public class Player {
 
     // Columns in Player Table
-    // Help for autogen from https://stackoverflow.com/questions/44109700/how-to-make-primary-key-as-autoincrement-for-room-persistence-lib
+    // Help for auto generate from https://stackoverflow.com/questions/44109700/how-to-make-primary-key-as-autoincrement-for-room-persistence-lib
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int mId;

@@ -2,21 +2,12 @@ package edu.calvin.cs262.beg23.homework3;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.lifecycle.Observer;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
-
-import java.sql.Date;
-import java.util.List;
-
-import edu.calvin.cs262.beg23.homework3.Player;
-import edu.calvin.cs262.beg23.homework3.PlayerDao;
 
 /**
  * Class to store the monopoly database

@@ -1,7 +1,7 @@
 2. a.
 
-This homework is not RESTful because it does not use HTTP(S) commands, it does not pass or recieve JSON or XML, and the objects are not URLs.
-Homework2 is not completely RESTful either although it is closer. It does use HTTP(S) with the GET command, it uses URLs for its request objects, and it is stateless because the receiver does not remember the state of the client between requests, but it does not recieve JSON or XML, it just recieves a full HTML page.
+This homework is not RESTful because it does not use HTTP(S) commands, it does not pass or receive JSON or XML, and the objects are not URLs.
+Homework2 is not completely RESTful either although it is closer. It does use HTTP(S) with the GET command, it uses URLs for its request objects, and it is stateless because the receiver does not remember the state of the client between requests, but it does not receive JSON or XML, it just receives a full HTML page.
 
 2. b.
 

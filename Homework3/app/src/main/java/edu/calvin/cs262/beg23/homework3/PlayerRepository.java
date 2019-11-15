@@ -2,14 +2,10 @@ package edu.calvin.cs262.beg23.homework3;
 
 import android.app.Application;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
-
-import edu.calvin.cs262.beg23.homework3.Player;
-import edu.calvin.cs262.beg23.homework3.PlayerDao;
 
 /**
  * Repository to access the database through DAO
@@ -17,8 +13,6 @@ import edu.calvin.cs262.beg23.homework3.PlayerDao;
 public class PlayerRepository {
 
     private PlayerDao mPlayerDao;
-    private GameDao mGameDao;
-    private PlayerGameDao mPlayerGameDao;
     private LiveData<List<Player>> mAllPlayers;
 
     /**
@@ -29,8 +23,8 @@ public class PlayerRepository {
     PlayerRepository(Application application) {
         MonopolyRoomDatabase db = MonopolyRoomDatabase.getDatabase(application);
         mPlayerDao = db.playerDao();
-        mGameDao = db.gameDao();
-        mPlayerGameDao = db.playerGameDao();
+        GameDao mGameDao = db.gameDao();
+        PlayerGameDao mPlayerGameDao = db.playerGameDao();
         mAllPlayers = mPlayerDao.getAllPlayers();
     }
 

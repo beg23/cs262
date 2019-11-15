@@ -7,9 +7,6 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import edu.calvin.cs262.beg23.homework3.Game;
-import edu.calvin.cs262.beg23.homework3.Player;
-
 import java.util.List;
 
 /**
@@ -38,6 +35,7 @@ public interface PlayerGameDao {
     @Delete
     void deletePlayerGame(PlayerGame playerGame);
 
+    /*
     // Get all Games which a given Player is in
     @Query("SELECT * FROM game_table INNER JOIN player_game_table ON " +
             "game_table.id = player_game_table.gameId WHERE " +
@@ -49,4 +47,6 @@ public interface PlayerGameDao {
             "player_table.id = player_game_table.playerId WHERE " +
             "player_game_table.gameId = :gameId")
     List<Player> getPlayersForGames(final int gameId);
+
+     */
 }

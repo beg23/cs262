@@ -6,31 +6,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-
-import edu.calvin.cs262.beg23.homework3.R;
-import edu.calvin.cs262.beg23.homework3.Player;
 
 /**
  * Adapter to allow a RecyclerView to display all Players
  */
 public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.PlayerViewHolder> {
 
-    private final LayoutInflater mInflater;
+    private LayoutInflater mInflater;
     private List<Player> mPlayers; // Cached copy of players
 
     PlayerListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
 
+    @NonNull
     @Override
-    public PlayerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
+    public PlayerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = mInflater.inflate(R.layout.recycler_view_item, parent, false);
         return new PlayerViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(PlayerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PlayerViewHolder holder, int position) {
         String player_str;
         if (mPlayers != null) {
             Player current = mPlayers.get(position);
@@ -38,7 +37,7 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
             holder.playerItemView.setText(player_str);
         } else {
             // Covers the case of data not being ready yet.
-            holder.playerItemView.setText("No Player");
+            holder.playerItemView.setText(R.string.no_player);
         }
     }
 
