@@ -1,0 +1,51 @@
+Homework 1:
+
+Updated versions in build.gradle
+Added backup_descriptor.xml file
+Used unused function parameter
+Fixed import in test java file
+
+Did not fix "App is not indexable by Google Search..." because it didn't seem relevant
+Did not remove unused parameter in calculateAnswer() because it is an onClick method so it needs to recieve a View
+
+Homework 2:
+
+Fixed typo in "timeout"
+Updated versions in build.gradle
+Replace ellipse with ellipse char
+Removed unused imports
+Removed redundant type cast
+
+Did not remove usesCleartextTraffic because this was necessary for my code to work
+Did not fix "App is not indexable by Google Search..." because it didn't seem relevant
+Did not fix "On SDK vers 23 and up, you app data will be auto backed up..." because it didn't seem relevant
+Kept deprecated getSupportLoaderManager() because I wouldn't know what to replace it with to not break it
+Did not make things private or package private because it seemed to break the app
+Did not make things final, private, or package private because one or more of these made my hw3 break, so I was too scared to change it
+
+Homework 3:
+
+Constrained recyclerview
+Updated versions in build.gradle
+Commented out unused methods
+Corrected some typos which were legitimate spelling issues, but fake names (ie Tahu) or technical terms (ie. RESTful or mullipotent) I kept
+Made fields into local vars
+Removed unused imports
+Added @NonNull to @Overriden @NonNull params and function
+Removed redundant background colors
+Removed unused xml resources
+Replace ellipse with ellipse char
+
+Did not add missing autofillHints since it is only used in certain versions
+Did not fix "App is not indexable by Google Search..." because it didn't seem relevant
+Did not fix "On SDK vers 23 and up, you app data will be auto backed up..." because it didn't seem relevant
+Did not remove certain query functions and variables because in theory they would be useful if the app was expanded
+Did not make things private or package private because it seemed to break the app
+Did not make things final because it seemed to break the app
+(One of those last 2 broke the app not sure which so didn't do either)
+Did not add body to xml with blank body because there wasn't anything relevent to add to my knowledge
+
+
+
+Apart from all of these, there was the changes made automatically from Code->ReformatCode which primarily includes small style changes like spacing in comments or brace placement or some random xml I think
+I didn't really see much if any JavaDoc recommendations even though I'm sure I missed some documentation, but oh well
